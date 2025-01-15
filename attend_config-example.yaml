@@ -1,0 +1,65 @@
+# This example configuration file is a part of Attend. Attend is a voice assistant that uses 
+# very expensive algorithms to direct your attention... however you damn well please.
+# Copyright (C) 2025 Scott Macdonell
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+# Server configuration
+server-tts:
+  host: localhost
+  port: 8000
+  key: AnythingButEmpty
+  model: tts-1
+  voice: nova
+  speed: 1.0
+
+server-stt:
+  host: localhost
+  port: 8001
+  key: AnythingButEmpty
+  
+# API Vision configuration
+server-vision:
+  host: localhost
+  port: 8002
+  key: AnythingButEmpty
+  model: Qwen/Qwen2-VL-7B-Instruct-AWQ
+
+# API Text configuration
+# Can be the vision model, but you can use a different model better for chat as well
+server-text:
+  host: localhost
+  port: 8002
+  key: AnythingButEmpty
+  model: Qwen/Qwen2-VL-7B-Instruct-AWQ
+  
+
+client:
+  audio:
+    chunk: 512
+    format: pyaudio.paInt16
+    channels: 1
+    rate: 16000
+    buffer_seconds: 120  # 2 minutes buffer    
+    speech_start_threshold: 0.6  # Threshold in seconds to determine how long before vad_processor must hear speech before setting speech_detected=True
+    speech_end_threshold: 0.6  # Threshold in seconds to determine how long before vad_processor sets self.speech_started = False self.speech_ended = True
+  tts:
+    intersentence_pause: 0.4 # Length of time Attend pauses between sentences
+    
+
+# VAD configuration
+vad:
+  model_path: "models/silero_vad.onnx"
+  sampling_rate: 16000
+  window_size_samples: 512

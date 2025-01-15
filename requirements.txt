@@ -1,0 +1,8 @@
+pytest
+pytest-mock
+pyaudio>=0.2.12
+PyYAML>=6.0
+numpy
+openai
+nltk
+pyautogui

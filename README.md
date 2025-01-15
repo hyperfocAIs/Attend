@@ -1,2 +1,7 @@
-# Attend
-Attend... to what matters.
+Our attention is being stolen. 
+
+**TAKE. IT. BACK.**
+
+Attend - to what matters.
+
+# Overview
