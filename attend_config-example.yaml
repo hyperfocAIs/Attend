@@ -15,34 +15,63 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+
+# The below assumes all models are running on a computer on your network at 192.168.1.103 and were started using
+# the docker commands in the README. Examples for OpenAI's API and OpenRouter are also provided.
+
 # Server configuration
 server-tts:
-  host: localhost
-  port: 8000
+  host: http://192.168.1.103
+  # port: 8000
+  port: 8880
   key: AnythingButEmpty
-  model: tts-1
-  voice: nova
+  model: kokoro
+  voice: af_sky
+  # model: tts-1-hd
+  # voice: onyx
   speed: 1.0
 
+# Alternative Example using OpenAI's API
+# # Server configuration
+# server-tts:
+#   host: https://api.openai.com/
+#   port: 443
+#   key: sk-proj-ab15...
+#   model: tts-1-hd
+#   voice: onyx
+#   speed: 1.0
+
 server-stt:
-  host: localhost
+  host: http://192.168.1.103
   port: 8001
   key: AnythingButEmpty
+  model: Systran/faster-distil-whisper-small.en
   
 # API Vision configuration
 server-vision:
-  host: localhost
+  host: http://192.168.1.103
   port: 8002
   key: AnythingButEmpty
-  model: Qwen/Qwen2-VL-7B-Instruct-AWQ
+  model: Qwen/Qwen2-VL-7B-Instruct-GPTQ-Int8
+
+## Alternative example using OpenRouter
+# # API Vision configuration
+# server-vision:
+#   host: https://openrouter.ai/api
+#   port: 443
+#   key: sk-or-v1-ab15...
+#   model: qwen/qwen-2-vl-7b-instruct
+
+
 
 # API Text configuration
 # Can be the vision model, but you can use a different model better for chat as well
 server-text:
-  host: localhost
-  port: 8002
+  host: http://192.168.1.103
+  port: 2243
   key: AnythingButEmpty
-  model: Qwen/Qwen2-VL-7B-Instruct-AWQ
+  model: CalamitousFelicitousness/Llama-3.3-70B-Instruct-W8A8-INT8
+
   
 
 client:
