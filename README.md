@@ -6,13 +6,13 @@ Attend - to what matters.
 
 # Overview
 
-Attend is a project born of the idea that our technology should help people spend their time, engergy and attention on what they value most, and that, far too often, it does the opposite.
+Attend is a project born of the idea that our technology should help people spend their time, energy and attention on what they value most, and that, far too often, it does the opposite.
 
 Start Attend. Tell it what you want to do. It will help you do it, and not do something else.
 
 # How it works
 
-Attend is a voice asssitant powered by generative AI (Voice activity detection, Speech to text, Text to speech, and Large language models) that asks you what you want to do, and then helps you do it. This includes processing screenshots from your computer and determining if what you're doing is aligned with what you said you wanted to do.
+Attend is a voice assistant powered by generative AI (Voice activity detection, Speech to text, Text to speech, and Large language models) that asks you what you want to do, and then helps you do it. This includes processing screenshots from your computer and determining if what you're doing is aligned with what you said you wanted to do.
 
 # How to use it
 
