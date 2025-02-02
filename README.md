@@ -18,6 +18,16 @@ Attend is a voice assistant powered by generative AI (Voice activity detection, 
 
 Attend is under early and active development, there are likely bugs, and features will be added and improved frequently.
 
+## Your computer
+
+- Copy the repo
+- Setup a virtual environment
+- `pip install -r requirements.txt`
+- Rename attend_config-example.yaml to attend_config.yaml
+    - Edit attend_config.yaml to use the APIs/models you want. (See the next section for instructions on setting up local models)
+- Run `python main.py`.
+
+
 ## AI models
 
 Attend requires API access to: TTS, STT, a text only LLM, and a vision LLM. You can use the same model for the last two if you want, but may want to use a different model for the text only LLM if the vision LLM isn't good for dialogue or driving Attend's agentic features.
@@ -53,7 +63,4 @@ huggingface-cli download deepdml/faster-whisper-large-v3-turbo-ct2
 docker run --gpus '"device=0"' --runtime nvidia --publish 8001:8000 --volume ~/.cache/huggingface:/root/.cache/huggingface --env WHISPER__MODEL=deepdml/faster-whisper-large-v3-turbo-ct2 --env WHISPER__TTL=-1 --name attend_stt --restart always fedirz/faster-whisper-server:sha-caba05a-cuda
 ```
 
-## Your computer
-
-Copy the repo, setup a virtual environment, `pip install -r requirements.txt`, rename attend_config-example.yaml to attend_config.yaml and edit it to use the APIs/model you want, and then run `python main.py`.
 
