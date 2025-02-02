@@ -6,17 +6,27 @@ Attend - to what matters.
 
 # Overview
 
-Attend is a project born of the idea that our technology should help people spend their time, engergy and attention on what they value most, and that, far too often, it does the opposite.
+Attend is a project born of the idea that our technology should help people spend their time, energy and attention on what they value most, and that, far too often, it does the opposite.
 
 Start Attend. Tell it what you want to do. It will help you do it, and not do something else.
 
 # How it works
 
-Attend is a voice asssitant powered by generative AI (Voice activity detection, Speech to text, Text to speech, and Large language models) that asks you what you want to do, and then helps you do it. This includes processing screenshots from your computer and determining if what you're doing is aligned with what you said you wanted to do.
+Attend is a voice assistant powered by generative AI (Voice activity detection, Speech to text, Text to speech, and Large language models) that asks you what you want to do, and then helps you do it. This includes processing screenshots from your computer and determining if what you're doing is aligned with what you said you wanted to do.
 
 # How to use it
 
 Attend is under early and active development, there are likely bugs, and features will be added and improved frequently.
+
+## Your computer
+
+- Copy the repo
+- Setup a virtual environment
+- `pip install -r requirements.txt`
+- Rename attend_config-example.yaml to attend_config.yaml
+    - Edit attend_config.yaml to use the APIs/models you want. (See the next section for instructions on setting up local models)
+- Run `python main.py`.
+
 
 ## AI models
 
@@ -53,7 +63,4 @@ huggingface-cli download deepdml/faster-whisper-large-v3-turbo-ct2
 docker run --gpus '"device=0"' --runtime nvidia --publish 8001:8000 --volume ~/.cache/huggingface:/root/.cache/huggingface --env WHISPER__MODEL=deepdml/faster-whisper-large-v3-turbo-ct2 --env WHISPER__TTL=-1 --name attend_stt --restart always fedirz/faster-whisper-server:sha-caba05a-cuda
 ```
 
-## Your computer
-
-Copy the repo, setup a virtual environment, `pip install -r requirements.txt`, rename attend_config-example.yaml to attend_config.yaml and edit it to use the APIs/model you want, and then run `python main.py`.
 
