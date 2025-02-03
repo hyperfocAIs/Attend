@@ -136,7 +136,7 @@ def after_user_turn():
     pass
 
 
-# Define how the mode should intialize, options include
+# Define how the mode should initialize, options include
     # "greeting":
     # {
     #     "text": "text to be spoken",
