@@ -118,7 +118,7 @@ def analyze_screen(vision_client, screen_image):
                     "content": [
                         {
                             "type": "text",
-                            "text": f"The user has said they want to {activity_description}. Looking at their screen, describe **in English only** what they are doing and whether it appears they are still engaged in their chosen activity."
+                            "text": f"The user has said they want to {activity_description}. Review their screen and, **in English only**, 1) describe  what they are doing, and 2) think step by step about whether it appears they are still engaged in their chosen activity."
                         },
                         {
                             "type": "image_url",
